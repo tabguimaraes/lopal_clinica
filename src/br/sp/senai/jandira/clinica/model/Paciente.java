@@ -1,7 +1,8 @@
 package br.sp.senai.jandira.clinica.model;
 
 import java.time.LocalDate;
-// import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatter;
+
 
 public class Paciente {
 	private String nome;
@@ -10,7 +11,7 @@ public class Paciente {
 	private String genero;
 	private String telefone;
 	private LocalDate dataNascimento;
-	// DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 	public void setNome(String nome) {
 		if (nome.length() <= 3 | nome.isBlank()) {
@@ -125,6 +126,8 @@ public class Paciente {
 		System.out.println(("Genero: " + genero).toUpperCase());
 		System.out.println(separadorCampos);
 		System.out.println(("Telefone: " + telefone).toUpperCase());
+		System.out.println(separadorCampos);
+		System.out.println(("data de nascimento: " + dataNascimento.format(formatter)).toUpperCase());
 
 	}
 
